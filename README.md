@@ -12,8 +12,16 @@
 
 ### Deploy
 
+Deploy the entire stack
+
 ```
 $ sls deploy --stage prod -v
+```
+
+Deploy a specifc function
+
+```
+$ sls deploy -f hello -v
 ```
 
 ### Remove
