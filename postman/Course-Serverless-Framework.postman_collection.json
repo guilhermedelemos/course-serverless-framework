@@ -1,0 +1,138 @@
+{
+	"info": {
+		"_postman_id": "236d4f8e-ebbc-4fbc-855f-e6dc04dab5d9",
+		"name": "Course Serverless Framework",
+		"description": "https://github.com/guilhermedelemos/course-serverless-framework",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "hello",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"url": {
+					"raw": "{{BASE_URL}}/hello",
+					"host": [
+						"{{BASE_URL}}"
+					],
+					"path": [
+						"hello"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/auction",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"title\": \"Super nice ruler\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{BASE_URL}}/auction",
+					"host": [
+						"{{BASE_URL}}"
+					],
+					"path": [
+						"auction"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/auctions",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{BASE_URL}}/auctions",
+					"host": [
+						"{{BASE_URL}}"
+					],
+					"path": [
+						"auctions"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/auction/{id}",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{BASE_URL}}/auction/f8d6603f-630d-43c3-86bf-682b6d7ef137",
+					"host": [
+						"{{BASE_URL}}"
+					],
+					"path": [
+						"auction",
+						"f8d6603f-630d-43c3-86bf-682b6d7ef137"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/auction/{id}/bid",
+			"request": {
+				"method": "PATCH",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"amount\": 90001\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{BASE_URL}}/auction/c84dcda8-0d0c-4b44-823f-93d02946d5s9b/bid",
+					"host": [
+						"{{BASE_URL}}"
+					],
+					"path": [
+						"auction",
+						"c84dcda8-0d0c-4b44-823f-93d02946d5s9b",
+						"bid"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}
