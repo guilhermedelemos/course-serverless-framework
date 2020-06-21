@@ -6,5 +6,3 @@ async function hello(event, context) {
 }
 
 export const handler = hello;
-
-
