@@ -10,7 +10,23 @@
 
 ## Infrastructure
 
+### AWS Cli
+
+- Create a IAM user with programatic access
+- Configure AWS Cli with the public and secret keys (awc configure)
+
 ### Deploy
+
+#### Auth Service
+
+- Create a secret.pem file using the OAuth certificate.
+
+```
+$ cd auth-service
+$ sls deploy -v --stage dev
+```
+
+#### Auction Service
 
 Deploy the entire stack
 
@@ -28,4 +44,10 @@ $ sls deploy -f hello -v
 
 ```
 $ sls remove --stage dev -v
+```
+
+### Invoke a Lambda
+
+```
+$ sls invoke -f processAuctions -l
 ```
