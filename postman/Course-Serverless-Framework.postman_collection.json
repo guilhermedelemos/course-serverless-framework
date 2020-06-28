@@ -31,8 +31,18 @@
 			"response": []
 		},
 		{
-			"name": "/auction",
+			"name": "Create Auction",
 			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{AUTH_TOKEN}}",
+							"type": "string"
+						}
+					]
+				},
 				"method": "POST",
 				"header": [
 					{
@@ -44,7 +54,7 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n\t\"title\": \"Super nice ruler\"\n}",
+					"raw": "{\n\t\"title\": \"Skateboard\"\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -64,43 +74,79 @@
 			"response": []
 		},
 		{
-			"name": "/auctions",
+			"name": "Get All Auctions",
 			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{AUTH_TOKEN}}",
+							"type": "string"
+						}
+					]
+				},
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "{{BASE_URL}}/auctions",
+					"raw": "{{BASE_URL}}/auctions?status=OPEN",
 					"host": [
 						"{{BASE_URL}}"
 					],
 					"path": [
 						"auctions"
+					],
+					"query": [
+						{
+							"key": "status",
+							"value": "OPEN"
+						}
 					]
 				}
 			},
 			"response": []
 		},
 		{
-			"name": "/auction/{id}",
+			"name": "Get Auction",
 			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{AUTH_TOKEN}}",
+							"type": "string"
+						}
+					]
+				},
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "{{BASE_URL}}/auction/f8d6603f-630d-43c3-86bf-682b6d7ef137",
+					"raw": "{{BASE_URL}}/auction/7301c3bb-670a-4eb9-8ad2-4e193a36eb82",
 					"host": [
 						"{{BASE_URL}}"
 					],
 					"path": [
 						"auction",
-						"f8d6603f-630d-43c3-86bf-682b6d7ef137"
+						"7301c3bb-670a-4eb9-8ad2-4e193a36eb82"
 					]
 				}
 			},
 			"response": []
 		},
 		{
-			"name": "/auction/{id}/bid",
+			"name": "Place Bid",
 			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{AUTH_TOKEN}}",
+							"type": "string"
+						}
+					]
+				},
 				"method": "PATCH",
 				"header": [
 					{
@@ -112,7 +158,7 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n\t\"amount\": 90001\n}",
+					"raw": "{\n\t\"amount\": 90003\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -120,14 +166,99 @@
 					}
 				},
 				"url": {
-					"raw": "{{BASE_URL}}/auction/c84dcda8-0d0c-4b44-823f-93d02946d5s9b/bid",
+					"raw": "{{BASE_URL}}/auction/f1b39a66-4bbb-4b97-9ecc-b2f11f3d0a05/bid",
 					"host": [
 						"{{BASE_URL}}"
 					],
 					"path": [
 						"auction",
-						"c84dcda8-0d0c-4b44-823f-93d02946d5s9b",
+						"f1b39a66-4bbb-4b97-9ecc-b2f11f3d0a05",
 						"bid"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "OAuth Request",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "client_id",
+							"value": "O5Mz2ZwIbIFMA9PiybFpCKlBkwsedyl2",
+							"type": "text"
+						},
+						{
+							"key": "username",
+							"value": "guilherme.eti+1@gmail.com",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "Ch4ot1ca@2020",
+							"type": "text"
+						},
+						{
+							"key": "grant_type",
+							"value": "password",
+							"type": "text"
+						},
+						{
+							"key": "scope",
+							"value": "openid",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "https://guilherme-dev.us.auth0.com/oauth/token",
+					"protocol": "https",
+					"host": [
+						"guilherme-dev",
+						"us",
+						"auth0",
+						"com"
+					],
+					"path": [
+						"oauth",
+						"token"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "OAuth Test",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{AUTH_TOKEN}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "https://aqgugfqd7a.execute-api.us-east-1.amazonaws.com/dev/private",
+					"protocol": "https",
+					"host": [
+						"aqgugfqd7a",
+						"execute-api",
+						"us-east-1",
+						"amazonaws",
+						"com"
+					],
+					"path": [
+						"dev",
+						"private"
 					]
 				}
 			},
