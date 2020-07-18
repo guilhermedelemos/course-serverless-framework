@@ -10,6 +10,7 @@ provider:
   runtime: nodejs12.x
   memorySize: 128
   region: us-east-1
+  stage: ${opt:stage, 'dev'}
   environment:
     AUTH0_PUBLIC_KEY: ${file(secret.pem)}
 

@@ -17,6 +17,12 @@
 
 ### Deploy
 
+Order:
+
+- auth-service
+- notification-service
+- auction-service
+
 #### Auth Service
 
 - Create a secret.pem file using the OAuth certificate.
@@ -51,3 +57,7 @@ $ sls remove --stage dev -v
 ```
 $ sls invoke -f processAuctions -l
 ```
+
+## Others
+
+- https://medium.com/@oieduardorabelo/serverless-framework-as-10-melhores-pr%C3%A1ticas-recomendadas-e2ec59f92699

@@ -9,6 +9,9 @@
 		{
 			"name": "hello",
 			"request": {
+				"auth": {
+					"type": "noauth"
+				},
 				"method": "GET",
 				"header": [
 					{
@@ -54,7 +57,7 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n\t\"title\": \"Skateboard\"\n}",
+					"raw": "{\n\t\"title\": \"Unicorn\"\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -122,13 +125,13 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "{{BASE_URL}}/auction/7301c3bb-670a-4eb9-8ad2-4e193a36eb82",
+					"raw": "{{BASE_URL}}/auction/e940c286-3c6c-4b91-8d7d-598cc13c7d80",
 					"host": [
 						"{{BASE_URL}}"
 					],
 					"path": [
 						"auction",
-						"7301c3bb-670a-4eb9-8ad2-4e193a36eb82"
+						"e940c286-3c6c-4b91-8d7d-598cc13c7d80"
 					]
 				}
 			},
@@ -158,7 +161,7 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n\t\"amount\": 90003\n}",
+					"raw": "{\n\t\"amount\": 1000\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -166,14 +169,59 @@
 					}
 				},
 				"url": {
-					"raw": "{{BASE_URL}}/auction/f1b39a66-4bbb-4b97-9ecc-b2f11f3d0a05/bid",
+					"raw": "{{BASE_URL}}/auction/e940c286-3c6c-4b91-8d7d-598cc13c7d80/bid",
 					"host": [
 						"{{BASE_URL}}"
 					],
 					"path": [
 						"auction",
-						"f1b39a66-4bbb-4b97-9ecc-b2f11f3d0a05",
+						"e940c286-3c6c-4b91-8d7d-598cc13c7d80",
 						"bid"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Place Bid Copy",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{AUTH_TOKEN}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PATCH",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{BASE_URL}}/auction/e940c286-3c6c-4b91-8d7d-598cc13c7d80/picture",
+					"host": [
+						"{{BASE_URL}}"
+					],
+					"path": [
+						"auction",
+						"e940c286-3c6c-4b91-8d7d-598cc13c7d80",
+						"picture"
 					]
 				}
 			},
@@ -247,10 +295,10 @@
 				"method": "POST",
 				"header": [],
 				"url": {
-					"raw": "https://aqgugfqd7a.execute-api.us-east-1.amazonaws.com/dev/private",
+					"raw": "https://utuubqmgh7.execute-api.us-east-1.amazonaws.com/dev/private",
 					"protocol": "https",
 					"host": [
-						"aqgugfqd7a",
+						"utuubqmgh7",
 						"execute-api",
 						"us-east-1",
 						"amazonaws",
