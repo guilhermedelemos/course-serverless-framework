@@ -61,3 +61,4 @@ $ sls invoke -f processAuctions -l
 ## Others
 
 - https://medium.com/@oieduardorabelo/serverless-framework-as-10-melhores-pr%C3%A1ticas-recomendadas-e2ec59f92699
+- https://www.serverless.com/blog/cors-api-gateway-survival-guide
