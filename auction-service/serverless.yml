@@ -74,8 +74,8 @@ functions:
 
   processAuctions:
     handler: src/handlers/processAuctions.handler
-    events:
-      - schedule: rate(5 minutes)
+    events: # <-- Comment this line to disable the schedule
+      - schedule: rate(5 minutes) # <-- Comment this line to disable the schedule
 
   uploadAuctionPicture:
     handler: src/handlers/uploadAuctionPicture.handler

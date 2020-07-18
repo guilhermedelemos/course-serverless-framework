@@ -58,6 +58,15 @@ $ sls remove --stage dev -v
 $ sls invoke -f processAuctions -l
 ```
 
+## Frontend
+
+- Set the environment variables and then:
+
+```
+$ npm i
+$ npm start
+```
+
 ## Others
 
 - https://medium.com/@oieduardorabelo/serverless-framework-as-10-melhores-pr%C3%A1ticas-recomendadas-e2ec59f92699
